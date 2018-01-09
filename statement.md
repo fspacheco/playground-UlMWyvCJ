@@ -69,3 +69,19 @@ int main()
 
 ```
 
+Just like any other array, you can put the array size inside the `[]` of the declaration:
+
+```
+char char_array[15] = "Look Here";
+```
+
+The array indices 0 through 9 will be initialized with the characters and NULL characters. Remaining indices (10 to 14) will be initialized with 0 (same as the NULL character when converted to `char`). In memory, the above array looks like as follows:
+
+```
+------------------------------------------------------------------
+| L | o | o | k |  | H | e | r | e | \0 | \0 | \0 | \0 | \0 | \0 |
+------------------------------------------------------------------
+  0   1   2   3   4  5   6   7   8   9    10   11   12   13   14
+```
+
+
