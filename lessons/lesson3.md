@@ -25,3 +25,49 @@ char dest[4] = "A";
 
 strcpy(dest, src); /* Fatal: dest doesn't have enough space to hold all characters of src */
 ```
+
+The destination character array doesn't have to initialized. It can be left uninitialized and can be passed to `strcpy`. Still, it must have enough space to hold the source array and a NULL character.
+
+```
+char src[] = "Look Here";
+char dest[40];
+
+strcpy(dest, src);
+printf("%s", dest); /* Output: Look Here */
+```
+
+Also possible:
+```
+char dest[40];
+
+strcpy(dest, "Look Here");
+printf("%s", dest); /* Output: Look Here */
+```
+
+Character pointers can also be passed as parameters of `strcpy`.
+
+```C runnable
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char src[] = "Look Here";
+	char dest[40] = "Unimaginable";
+
+	char *p = dest + 5;
+
+	strcpy(p, src);
+
+	printf("%s", dest);
+
+	char x;
+	scanf("%c", &x);
+
+	return 0;
+}
+
+```
+
+What happens in the example above is that `p` points to the 6th character of `dest`. When `p` is passed as the first parameter of `strcpy`, it becomes the first character to be overwritten by the function. So `src` gets copied starting at the 6th character of `dest`.
+
