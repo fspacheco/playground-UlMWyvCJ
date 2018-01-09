@@ -78,3 +78,4 @@ char *dp = dest + 8;
 strcpy(dp, sp);
 ```
 
+In the example above, `sp` points to the 6th character of `dest` and `dp` points to the 9th character of `dest`. Both of them share the same array (`dest`). This is not allowed and executing code like this may result unexpected results.
