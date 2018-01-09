@@ -38,3 +38,17 @@ int main()
 
 ```
 
+A more convenient way to initialize a C string is to initialize it through character array:
+
+```
+char char_array[] = "Look Here";
+```
+
+This is same as initializing it as follows:
+
+```
+char char_array[] = { 'L', 'o', 'o', 'k', ' ', 'H', 'e', 'r', 'e', '\0' };
+```
+
+But the former one is more intuitive. Note that when a character array is initialized by `char char_array[] = "Look Here";`, the terminating NULL character is appended automatically.
+
