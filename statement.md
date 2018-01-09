@@ -18,7 +18,7 @@ There are different ways to initialize a variable with C string.
 char *char_ptr = "Look Here";
 ```
 
-This initializes `char_ptr` to point to the first character of the read-only string `"Look Here"`. Yes, when a C string is initialized this way, trying to modify any character pointed to by `char_ptr` is undefined behaviour.
+This initializes `char_ptr` to point to the first character of the _read-only_ string `"Look Here"`. Yes, when a C string is initialized this way, trying to modify any character pointed to by `char_ptr` is undefined behaviour.
 
 ```C runnable
 #include <stdio.h>
