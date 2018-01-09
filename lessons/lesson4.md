@@ -9,4 +9,15 @@ The `strcat` function is used to append one string (source) at the end of anothe
 3. Copies the source string starting at the location of the NULL character of destination string.
 4. Appends a NULL character to the destination string when all characters of the source string are copied to the destination string.
 
+Here is an example:
+
+```
+char src[] = "Look Here";
+char dest[40] = "Unimaginable";
+
+strcat(dest, src);
+printf("%s", dest); /* Output: UnimaginableLook Here */
+```
+
+Notice how it works. When `dest` is initialized with `char dest[40] = "Unimaginable";` there is a NULL character at the end. That's the starting point for the source string to be copied. When all characters of source string are copied to `dest`, a NULL character is appended.
 
