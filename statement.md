@@ -30,8 +30,8 @@ int main()
 	char *char_ptr = "Look Here";
 
     /* Warning: uncommenting the following line will trigger undefined behaviour */
-	/* char_ptr[5] = '_'; */
-	printf("%s\n", char_ptr);
+	/* char_ptr[4] = '_'; */
+	printf(char_ptr);
 
 	return 0;
 }
@@ -51,4 +51,21 @@ char char_array[] = { 'L', 'o', 'o', 'k', ' ', 'H', 'e', 'r', 'e', '\0' };
 ```
 
 But the former one is more intuitive. Note that when a character array is initialized by `char char_array[] = "Look Here";`, the terminating NULL character is appended automatically.
+
+Any character in the array can be modified. In other words, any character in the C string `char_array` can be modified:
+
+```C runnable
+#include <stdio.h>
+
+int main()
+{
+	char char_array[] = "Look Here";
+
+	char_array[4] = '_';
+	printf(char_array);
+
+	return 0;
+}
+
+```
 
