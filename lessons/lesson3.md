@@ -1,4 +1,4 @@
-Examples in this lesson modify a string.
+Examples in this lesson modify a string/character array.
 
 ## Copying one string to another - `strcpy`
 
