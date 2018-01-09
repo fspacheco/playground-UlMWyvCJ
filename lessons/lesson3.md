@@ -7,7 +7,7 @@ Examples in this lesson modify a string/character array.
 The following example will overwrite the contents of `dest` with the content of `src`:
 
 ```
-char src[] = "Look Here";
+char src[]    = "Look Here";
 char dest[40] = "Unimaginable";
 
 strcpy(dest, src);
@@ -15,7 +15,7 @@ strcpy(dest, src);
 printf("%s", dest); /* Output: Look Here */
 ```
 
-The destination character array is the first parameter to `strcpy`. The source character array is the second parameter to `strcpy`.
+The destination character array is the first parameter to `strcpy`. The source character array is the second parameter to `strcpy`. The terminating NULL character is automatically appended at the end of the copy.
 
 The destination character array **must be large enough** to hold all characters in source character array, plus a NULL character. If the source array has 100 characters, the destination array must be at least 101 character long. Following code snippet will result in undefined behaviour:
 
@@ -78,4 +78,29 @@ char *dp = dest + 8;
 strcpy(dp, sp);
 ```
 
-In the example above, `sp` points to the 6th character of `dest` and `dp` points to the 9th character of `dest`. Both of them share the same array (`dest`). This is not allowed and executing code like this may result unexpected results.
+In the example above, `sp` points to the 6th character of `dest` and `dp` points to the 9th character of `dest`. Both of them share the same array (`dest`). This is not allowed and executing code like this may produce unexpected results.
+
+## Copying first n characters from one string to another - `strncpy`
+
+`strncpy` is used to copy first several characters from source string to destination string. It doesn't append any NULL character when the copying finishes.
+
+In the following example, the first 5 characters are copied. No NULL character is appended.
+
+```
+char src[]    = "Look Here";
+char dest[40] = "Unimaginable";
+
+strncpy(dest, src, 5);
+printf("%s", dest); /* Output: Look ginable */
+```
+
+Care must be taken when using `strncpy` to make sure that strings are NULL terminated. Following is an example of an ill-formed code which doesn't take NULL character into account:
+
+```
+char src[]  = "Look Here"; /* src has 9 + 1 = 10 characters */
+char dest[9]; /* dest can only hold 9 characters */
+
+strncpy(dest, src, 9); /* First 9 characters are copied to dest, where is the NULL character? */
+printf("%s", dest); /* Fatal: undefined behaviour */
+```
+
