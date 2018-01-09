@@ -21,3 +21,8 @@ printf("%s", dest); /* Output: UnimaginableLook Here */
 
 Notice how it works. When `dest` is initialized with `char dest[40] = "Unimaginable";` there is a NULL character at the end. That's the starting point for the source string to be copied. When all characters of source string are copied to `dest`, a NULL character is appended.
 
+Following properties which applied to `strcpy` are also applied to `strcat`:
+
+1. The destination character array must be large enough to hold all characters of source, all characters of destination and a NULL character.
+2. 
+
