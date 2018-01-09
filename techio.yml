@@ -4,5 +4,5 @@ plan:
   statement: lessons/lesson1.md
 - title: String length, comparison
   statement: lessons/lesson2.md
-- title: Lesson 3
+- title: String copy
   statement: lessons/lesson3.md
