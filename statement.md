@@ -75,7 +75,9 @@ Just like any other array, you can put the array size inside the `[]` of the dec
 char char_array[15] = "Look Here";
 ```
 
-The array indices 0 through 9 will be initialized with the characters and NULL characters. Remaining indices (10 to 14) will be initialized with 0 (same as the NULL character when converted to `char`). In memory, the above array looks like as follows:
+Make sure that the size you put inside `[]` is large enough to hold all the characters in the string, plus the terminating NULL character.
+
+The array indices 0 through 9 will be initialized with the characters and NULL character. Remaining indices (10 to 14) will be initialized with 0 (same as the NULL character when converted to `char`). In memory, the above array looks like as follows:
 
 ```
 ------------------------------------------------------------------
