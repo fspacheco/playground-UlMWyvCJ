@@ -2,5 +2,5 @@ title: How to play with strings in C
 plan:
 - title: What is a string in C
   statement: lessons/lesson1.md
-- title: String Operations
+- title: String length, comparison
   statement: lessons/lesson2.md
