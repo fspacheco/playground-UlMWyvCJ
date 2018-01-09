@@ -58,11 +58,7 @@ int main()
 	char *p = dest + 5;
 
 	strcpy(p, src);
-
 	printf("%s", dest);
-
-	char x;
-	scanf("%c", &x);
 
 	return 0;
 }
