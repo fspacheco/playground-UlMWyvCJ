@@ -104,3 +104,5 @@ strncpy(dest, src, 9); /* First 9 characters are copied to dest, where is the NU
 printf("%s", dest); /* Fatal: undefined behaviour - dest doesn't have a NULL character */
 ```
 
+Other properties of `strcpy` are also applicable for `strncpy`.
+
