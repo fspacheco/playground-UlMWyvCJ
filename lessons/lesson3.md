@@ -11,6 +11,8 @@ char src[] = "Look Here";
 char dest[40] = "Unimaginable";
 
 strcpy(dest, src);
+
+printf("%s", dest); /* Output: Look Here */
 ```
 
 The destination character array is the first parameter to `strcpy`. The source character array is the second parameter to `strcpy`.
