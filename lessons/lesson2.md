@@ -78,8 +78,8 @@ int main()
 	char str1[] = "Look HerE";
 	char str2[] = "Look Here";
 
-	printf("%d\", strncmp(str1, str2, 8));
-	printf("%d\", strncmp(str1, str2, 9));
+	printf("%d\n", strncmp(str1, str2, 8));
+	printf("%d\n", strncmp(str1, str2, 9));
 
 	return 0;
 }
