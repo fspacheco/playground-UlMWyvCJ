@@ -67,3 +67,14 @@ int main()
 
 What happens in the example above is that `p` points to the 6th character of `dest`. When `p` is passed as the first parameter of `strcpy`, it becomes the first character to be overwritten by the function. So `src` gets copied starting at the 6th character of `dest`.
 
+**Warning**: Care must be taken when passing character pointers to `strcpy`. The source and destination aren't allowed to overlap. For example, the following is forbidden:
+
+```
+char dest[40] = "Unimaginable";
+
+char *sp = dest + 5;
+char *dp = dest + 8;
+
+strcpy(dp, sp);
+```
+
