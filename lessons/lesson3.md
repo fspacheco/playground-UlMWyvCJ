@@ -101,6 +101,6 @@ char src[]  = "Look Here"; /* src has 9 + 1 = 10 characters */
 char dest[9]; /* dest can only hold 9 characters */
 
 strncpy(dest, src, 9); /* First 9 characters are copied to dest, where is the NULL character? */
-printf("%s", dest); /* Fatal: undefined behaviour */
+printf("%s", dest); /* Fatal: undefined behaviour - dest doesn't have a NULL character */
 ```
 
