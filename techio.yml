@@ -4,3 +4,5 @@ plan:
   statement: lessons/lesson1.md
 - title: String length, comparison
   statement: lessons/lesson2.md
+- title: Lesson 3
+  statement: lessons/lesson3.md
