@@ -1,6 +1,6 @@
 title: How to play with strings in C
 plan:
-- title: What is a string in C
+- title: What Is A String In C
   statement: lessons/lesson1.md
 - title: String length, comparison
   statement: lessons/lesson2.md
