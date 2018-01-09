@@ -17,7 +17,7 @@ printf("%s", dest); /* Output: Look Here */
 
 The destination character array is the first parameter to `strcpy`. The source character array is the second parameter to `strcpy`.
 
-The destination character array **must be large enough** to hold all characters in source character array, plus a NULL character. Following code snippet will result in undefined behaviour:
+The destination character array **must be large enough** to hold all characters in source character array, plus a NULL character. If the source array has 100 characters, the destination array must be at least 101 character long. Following code snippet will result in undefined behaviour:
 
 ```
 char src[] = "Look Here";
