@@ -6,3 +6,5 @@ plan:
   statement: lessons/lesson2.md
 - title: String Copy
   statement: lessons/lesson3.md
+- title: String Concatenation
+  statement: lessons/lesson4.md
