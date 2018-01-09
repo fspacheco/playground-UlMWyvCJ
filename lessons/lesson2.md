@@ -43,6 +43,8 @@ int i = strcmp(str1, str2);
 
 `i` will be a negative number in the above example because the ASCII value of 'E' is lower than the ASCII value of 'e'. This is the first character (index 8) where these two strings differ.
 
+A negative return value indicates that the first string would come **before** the second string if the strings are sorted in ascending order.
+
 Try the following example, then modify `strX` arrays to your choice and see the result.
 
 ```C runnable
