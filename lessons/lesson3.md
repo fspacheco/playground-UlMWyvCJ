@@ -117,7 +117,7 @@ strncpy(dest, src, 5);
 printf("%s", dest); /* Output: Look ginable */
 ```
 
-Care must be taken when using `strncpy` to make sure that strings are NULL terminated. Following is an example of an ill-formed code which doesn't take NULL character into account:
+**Warning:** Care must be taken when using `strncpy` to make sure that strings are NULL terminated. Following is an example of an ill-formed code which doesn't take NULL character into account:
 
 ```C
 char src[]  = "Look Here"; /* src has 9 + 1 = 10 characters */
