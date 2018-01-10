@@ -71,3 +71,28 @@ int main()
 
 ```
 
+Character pointers can be used in `strcat`:
+
+```C runnable
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char src[] = "Look Here";
+	char dest[40] = "Unimaginable";
+
+	char *ps = src + 4;
+	char *pd = dest + 6;
+
+	strcat(pd, ps);
+	printf("%s", dest);
+
+	return 0;
+}
+```
+
+In the example above, `ps` points to the 5th character of `src` and `pd` points to the 7th character of `dest`. `strcat` finds the NULL character of `dest` starting from `pd` (or the 7th character of `dest`). This will find the NULL character at the end of `dest` - the same NULL character will be used for any other pointers inside `dest`. Copying starts from the 5th character of `src`, this is what `ps` is pointing to. At the end a NULL character is appended.
+
+**Warning:** When using character pointers, care must be taken so that the source and destination aren't overlapped.
+
