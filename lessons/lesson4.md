@@ -53,7 +53,7 @@ char dest[40];
 /* printf("%s", dest); */
 ```
 
-The destination array could be initialized as empty string (only the NULL character), then `strcat` can be used:
+At minimum the destination array could be initialized as empty string (only the NULL character) and after that `strcat` can be used:
 
 ```C runnable
 #include <stdio.h>
