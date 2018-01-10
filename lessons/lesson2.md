@@ -12,7 +12,7 @@ int main()
 {
 	char str[] = "Look Here";
 
-	printf("Number of characters in \'%s\' is %d\n", str, strlen(str));
+	printf("Number of characters in \'%s\' is %d", str, strlen(str));
 
 	return 0;
 }
