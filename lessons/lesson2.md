@@ -23,7 +23,7 @@ int main()
 
 `strcmp` is used to compare two different C strings. When the strings passed to `strcmp` contains exactly same characters in every index and have exactly same length, it returns 0. For example, `i` will be 0 in the following code:
 
-```
+```C
 char str1[] = "Look Here";
 char str2[] = "Look Here";
 
@@ -34,7 +34,7 @@ If the passed parameters aren't same, `strcmp` returns either a positive or a ne
 
 `strcmp` returns a negative integer if the first character that's mismatched between passed parameters has a lower ASCII value in the first string. For example:
 
-```
+```C
 char str1[] = "Look HerE";
 char str2[] = "Look Here";
 
