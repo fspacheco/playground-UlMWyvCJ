@@ -82,4 +82,10 @@ Make sure that the size you put inside `[]` is large enough to hold all the char
   0   1   2   3   4  5   6   7   8   9    10   11   12   13   14
 ```
 
+A better approach of defining character array (or in fact any array) is to define a constant for the array size, then use the constant as the size of the array:
+
+```C
+const int ARRAY_SIZE = 15;
+char char_array[ARRAY_SIZE] = "Look Here";
+```
 
