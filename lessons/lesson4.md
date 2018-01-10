@@ -50,7 +50,7 @@ char dest[40];
 /* strcat(dest, "Look Here"); */ /* Fatal: dest is not initialized
                                  - no guarantee about a NULL character 
                                  - undefined behaviour */
-/* printf("%s", dest); */
+/* printf("%s", dest); */ /* Fatal: dest isn't initialized - results in undefined behaviour */
 ```
 
 At minimum the destination array could be initialized as empty string (only the NULL character) and after that `strcat` can be used:
