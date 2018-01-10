@@ -1,15 +1,50 @@
-Examples in this lesson modifies existing string.
+Examples in this lesson modify a string/character array.
 
-## String concatenation - `strcat`
+## Copying one string to another - `strcpy`
 
-The `strcat` function is used to append one string (source) at the end of another string (destination). It does the following:
+`strcpy` can be used to copy one string to another. Remember that C strings are character arrays. You must pass character array, or pointer to character array to this function where string will be copied.
 
-1. Takes the destination string.
-2. Finds the NULL character.
-3. Copies the source string starting at the location of the NULL character of destination string.
-4. Appends a NULL character to the destination string when all characters of the source string are copied to the destination string.
+The following example will overwrite the contents of `dest` with the content of `src`:
 
-Here is an example:
+```C
+char src[]    = "Look Here";
+char dest[40] = "Unimaginable";
+
+strcpy(dest, src);
+
+printf("%s", dest); /* Output: Look Here */
+```
+
+The destination character array is the first parameter to `strcpy`. The source character array is the second parameter to `strcpy`. The terminating NULL character is automatically appended at the end of the copy.
+
+**Warning:** The destination character array must be large enough to hold all characters in source character array, plus a NULL character. If the source array has 100 characters, the destination array must be at least 101 character long. Following code snippet will result in undefined behaviour:
+
+```C
+char src[] = "Look Here";
+char dest[4] = "A";
+
+/* strcpy(dest, src); */ /* Fatal: dest doesn't have enough space to hold all characters of src */
+```
+
+The destination character array doesn't have to initialized. It can be left uninitialized and can be passed to `strcpy`. Still, it must have enough space to hold the source array and a NULL character.
+
+```C
+char src[] = "Look Here";
+char dest[40];
+
+strcpy(dest, src);
+printf("%s", dest); /* Output: Look Here */
+```
+
+Also possible:
+```C
+char dest[40];
+
+strcpy(dest, "Look Here");
+printf("%s", dest); /* Output: Look Here */
+```
+
+Character pointers can also be passed as parameters of `strcpy`.
 
 ```C runnable
 #include <stdio.h>
@@ -20,50 +55,9 @@ int main()
 	char src[] = "Look Here";
 	char dest[40] = "Unimaginable";
 
-	strcat(dest, src);
-	printf("%s", dest);
+	char *p = dest + 5;
 
-	return 0;
-}
-```
-
-Notice how it works. When `dest` is initialized with `char dest[40] = "Unimaginable";` there is a NULL character at the end. That's the starting point for the source string to be copied. When all characters of source string are copied to `dest`, a NULL character is appended.
-
-**Warning:** The destination character array must be large enough to hold all characters of source, all characters of destination and a NULL character. Following ill-formed code triggers undefined behaviour:
-
-```C
-char src[] = "Look Here";
-char dest[] = "Unimaginable";
-
-/* strcat(dest, src); */ /* Fatal: dest doesn't have enough spaces to hold
-                         all characters of dest
-                         all chracters of src
-                         a NULL character */
-printf("%s", dest);
-```
-
-**Warning:** The destination character array must be initialized with C string before passing it to `strcat`. In other words, the destination character array must have at least 1 location which has a NULL character. Following is an ill-formed code and shouldn't be practiced:
-
-```C
-char dest[40];
-
-/* strcat(dest, "Look Here"); */ /* Fatal: dest is not initialized
-                                 - no guarantee about a NULL character 
-                                 - undefined behaviour */
-/* printf("%s", dest); */ /* Fatal: dest isn't initialized - results in undefined behaviour */
-```
-
-At minimum the destination array could be initialized as empty string (only the NULL character) and after that `strcat` can be used:
-
-```C runnable
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-	char dest[40] = "";
-
-	strcat(dest, "Look Here");
+	strcpy(p, src);
 	printf("%s", dest);
 
 	return 0;
@@ -71,7 +65,9 @@ int main()
 
 ```
 
-Character pointers can be used in `strcat`:
+What happens in the example above is that `p` points to the 6th character of `dest`. When `p` is passed as the first parameter of `strcpy`, it becomes the first character to be overwritten by the function. So `src` gets copied starting at the 6th character of `dest` leaving first 5 characters untouched.
+
+Of course, the second parameter could also be pointer to character:
 
 ```C runnable
 #include <stdio.h>
@@ -83,25 +79,75 @@ int main()
 	char dest[40] = "Unimaginable";
 
 	char *ps = src + 4;
-	char *pd = dest + 6;
+	char *pd = dest + strlen(dest);
 
-	strcat(pd, ps);
+	strcpy(pd, ps);
 	printf("%s", dest);
 
 	return 0;
 }
 ```
 
-In the example above, `ps` points to the 5th character of `src` and `pd` points to the 7th character of `dest`. `strcat` finds the NULL character of `dest` starting from `pd` (i.e. the 7th character of `dest`). This will find the NULL character at the end of `dest` - the same NULL character will be used for any other pointers inside `dest`. Copying starts from the 5th character of `src`, this is what `ps` is pointing to. At the end a NULL character is appended.
+In the example above `ps` points to the space character of `src`. `pd` points to the NULL character of `dest`. So the call to `strcpy` overwrites the NULL character of `dest` with space character of `src`, followed by other characters of `src`, finally a NULL character is appended.
 
-**Warning:** When using character pointers, care must be taken so that the source and destination aren't overlapped. Following is an example of ill-formed code which uses `strcat` of overlapped buffer - which causes undefined behaviour:
+**Warning**: Care must be taken when passing character pointers to `strcpy`. The source and destination aren't allowed to overlap. For example, the following is forbidden:
 
 ```C
 char dest[40] = "Unimaginable";
 
-char *ps = dest + 6;
-char *pd = dest + 4;
+char *sp = dest + 5;
+char *dp = dest + 8;
 
-/* strcat(pd, ps); */ /* Fatal: pd and ps overlaps - undefined behaviour */
+/* strcpy(dp, sp); */ /* Fatal: source and destination aren't allowed to overlap */
 ```
+
+In the example above, `sp` points to the 6th character of `dest` and `dp` points to the 9th character of `dest`. Both of them share the same array (`dest`). This is not allowed and executing code like this may produce unexpected results.
+
+## Copying first n characters from one string to another - `strncpy`
+
+`strncpy` is used to copy first several characters from source string to destination string. It doesn't append any NULL character when the copying finishes.
+
+In the following example, the first 5 characters are copied. No NULL character is appended.
+
+```C
+char src[]    = "Look Here";
+char dest[40] = "Unimaginable";
+
+strncpy(dest, src, 5);
+printf("%s", dest); /* Output: Look ginable */
+```
+
+**Warning:** Care must be taken when using `strncpy` to make sure that strings are NULL terminated. Following is an example of an ill-formed code which doesn't take NULL character into account:
+
+```C
+char src[]  = "Look Here"; /* src has 9 + 1 = 10 characters */
+char dest[9]; /* dest can only hold 9 characters */
+
+strncpy(dest, src, 9); /* First 9 characters are copied to dest, where is the NULL character? */
+/* printf("%s", dest); */ /* Fatal: undefined behaviour - dest doesn't have a NULL character */
+```
+
+But it's fine if each characters are accessed individually:
+
+```C runnable
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char src[] = "Look Here"; /* src has 9 + 1 = 10 characters */
+	char dest[9]; /* dest can only hold 9 characters */
+
+	strncpy(dest, src, 9); /* First 9 characters are copied to dest, where is the NULL character? */
+	/* printf("%s", dest); */ /* Fatal: undefined behaviour - dest doesn't have a NULL character */
+
+    /* Print out the string by accessing each character individually */
+	for (int i = 0; i < 9; i++)
+		printf("%c", dest[i]);
+
+	return 0;
+}
+```
+
+Other properties of `strcpy` are also applicable for `strncpy`.
 
