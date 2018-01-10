@@ -11,12 +11,20 @@ The `strcat` function is used to append one string (source) at the end of anothe
 
 Here is an example:
 
-```
-char src[] = "Look Here";
-char dest[40] = "Unimaginable";
+```C runnable
+#include <stdio.h>
+#include <string.h>
 
-strcat(dest, src);
-printf("%s", dest); /* Output: UnimaginableLook Here */
+int main()
+{
+	char src[] = "Look Here";
+	char dest[40] = "Unimaginable";
+
+	strcat(dest, src);
+	printf("%s", dest);
+
+	return 0;
+}
 ```
 
 Notice how it works. When `dest` is initialized with `char dest[40] = "Unimaginable";` there is a NULL character at the end. That's the starting point for the source string to be copied. When all characters of source string are copied to `dest`, a NULL character is appended.
