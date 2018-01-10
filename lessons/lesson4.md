@@ -29,27 +29,27 @@ int main()
 
 Notice how it works. When `dest` is initialized with `char dest[40] = "Unimaginable";` there is a NULL character at the end. That's the starting point for the source string to be copied. When all characters of source string are copied to `dest`, a NULL character is appended.
 
-The destination character array must be large enough to hold all characters of source, all characters of destination and a NULL character. Following ill-formed code triggers undefined behaviour:
+**Warning:** The destination character array must be large enough to hold all characters of source, all characters of destination and a NULL character. Following ill-formed code triggers undefined behaviour:
 
 ```C
 char src[] = "Look Here";
 char dest[] = "Unimaginable";
 
 /* strcat(dest, src); */ /* Fatal: dest doesn't have enough spaces to hold
-						 all characters of dest
-						 all chracters of src
-						 a NULL character */
+                         all characters of dest
+                         all chracters of src
+                         a NULL character */
 printf("%s", dest);
 ```
 
-The destination character array (first parameter) must be initialized with C string before passing it to `strcat`. Following is an ill-formed code and shouldn't be practiced:
+**Warning:** The destination character array (first parameter) must be initialized with C string before passing it to `strcat`. Following is an ill-formed code and shouldn't be practiced:
 
 ```C
 char dest[40];
 
 /* strcat(dest, "Look Here"); */ /* Fatal: dest is not initialized
-								 - no guarantee about a NULL character 
-								 - undefined behaviour */
+                                 - no guarantee about a NULL character 
+                                 - undefined behaviour */
 /* printf("%s", dest); */
 ```
 
