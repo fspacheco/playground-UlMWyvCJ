@@ -88,6 +88,8 @@ int main()
 }
 ```
 
+In the example above `ps` points to the space character of `src`. `pd` points to the NULL character of `dest`. So a call to `strcpy` overwrites the NULL character of `dest` with space character of `src`, followed by other characters of `src`, finally a NULL character is appended.
+
 **Warning**: Care must be taken when passing character pointers to `strcpy`. The source and destination aren't allowed to overlap. For example, the following is forbidden:
 
 ```
