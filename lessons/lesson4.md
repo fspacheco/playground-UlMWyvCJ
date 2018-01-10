@@ -42,7 +42,7 @@ char dest[] = "Unimaginable";
 printf("%s", dest);
 ```
 
-**Warning:** The destination character array (first parameter) must be initialized with C string before passing it to `strcat`. Following is an ill-formed code and shouldn't be practiced:
+**Warning:** The destination character array must be initialized with C string before passing it to `strcat`. Following is an ill-formed code and shouldn't be practiced:
 
 ```C
 char dest[40];
