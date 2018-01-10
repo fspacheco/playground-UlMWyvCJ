@@ -42,3 +42,14 @@ char dest[] = "Unimaginable";
 printf("%s", dest);
 ```
 
+The destination character array (first parameter) must be initialized with C string before passing it to `strcat`. Following is an ill-formed code and shouldn't be practiced:
+
+```C
+char dest[40];
+
+/* strcat(dest, "Look Here"); */ /* Fatal: dest is not initialized
+								 - no guarantee about a NULL character 
+								 - undefined behaviour */
+/* printf("%s", dest); */
+```
+
