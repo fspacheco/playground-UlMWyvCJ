@@ -124,7 +124,29 @@ char src[]  = "Look Here"; /* src has 9 + 1 = 10 characters */
 char dest[9]; /* dest can only hold 9 characters */
 
 strncpy(dest, src, 9); /* First 9 characters are copied to dest, where is the NULL character? */
-printf("%s", dest); /* Fatal: undefined behaviour - dest doesn't have a NULL character */
+/* printf("%s", dest); */ /* Fatal: undefined behaviour - dest doesn't have a NULL character */
+```
+
+But it's fine if each characters are accessed individually:
+
+```C runnable
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char src[] = "Look Here"; /* src has 9 + 1 = 10 characters */
+	char dest[9]; /* dest can only hold 9 characters */
+
+	strncpy(dest, src, 9); /* First 9 characters are copied to dest, where is the NULL character? */
+	/* printf("%s", dest); */ /* Fatal: undefined behaviour - dest doesn't have a NULL character */
+
+    /* Print out the string by accessing each character individually */
+	for (int i = 0; i < 9; i++)
+		printf("%c", dest[i]);
+
+	return 0;
+}
 ```
 
 Other properties of `strcpy` are also applicable for `strncpy`.
