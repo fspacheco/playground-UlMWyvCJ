@@ -6,7 +6,7 @@ Examples in this lesson modify a string/character array.
 
 The following example will overwrite the contents of `dest` with the content of `src`:
 
-```
+```C
 char src[]    = "Look Here";
 char dest[40] = "Unimaginable";
 
@@ -19,7 +19,7 @@ The destination character array is the first parameter to `strcpy`. The source c
 
 The destination character array **must be large enough** to hold all characters in source character array, plus a NULL character. If the source array has 100 characters, the destination array must be at least 101 character long. Following code snippet will result in undefined behaviour:
 
-```
+```C
 char src[] = "Look Here";
 char dest[4] = "A";
 
@@ -28,7 +28,7 @@ char dest[4] = "A";
 
 The destination character array doesn't have to initialized. It can be left uninitialized and can be passed to `strcpy`. Still, it must have enough space to hold the source array and a NULL character.
 
-```
+```C
 char src[] = "Look Here";
 char dest[40];
 
@@ -37,7 +37,7 @@ printf("%s", dest); /* Output: Look Here */
 ```
 
 Also possible:
-```
+```C
 char dest[40];
 
 strcpy(dest, "Look Here");
@@ -92,7 +92,7 @@ In the example above `ps` points to the space character of `src`. `pd` points to
 
 **Warning**: Care must be taken when passing character pointers to `strcpy`. The source and destination aren't allowed to overlap. For example, the following is forbidden:
 
-```
+```C
 char dest[40] = "Unimaginable";
 
 char *sp = dest + 5;
@@ -109,7 +109,7 @@ In the example above, `sp` points to the 6th character of `dest` and `dp` points
 
 In the following example, the first 5 characters are copied. No NULL character is appended.
 
-```
+```C
 char src[]    = "Look Here";
 char dest[40] = "Unimaginable";
 
@@ -119,7 +119,7 @@ printf("%s", dest); /* Output: Look ginable */
 
 Care must be taken when using `strncpy` to make sure that strings are NULL terminated. Following is an example of an ill-formed code which doesn't take NULL character into account:
 
-```
+```C
 char src[]  = "Look Here"; /* src has 9 + 1 = 10 characters */
 char dest[9]; /* dest can only hold 9 characters */
 
