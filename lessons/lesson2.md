@@ -69,7 +69,7 @@ int main()
 
 ## Comparison of different strings upto n-th character - `strncmp`
 
-If you want to compare first n-th characters of two strings, then `strncmp` can be used. Its return value is similar to `strcmp`.
+If you want to compare first n characters of two strings, then `strncmp` can be used. Its return value is similar to `strcmp`.
 
 ```C runnable
 #include <stdio.h>
