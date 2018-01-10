@@ -12,7 +12,7 @@ It's an array of 10 characters.
 
 There are different ways to initialize a variable with C string.
 
-```
+```C
 char *char_ptr = "Look Here";
 ```
 
@@ -38,13 +38,13 @@ int main()
 
 A more convenient way to initialize a C string is to initialize it through character array:
 
-```
+```C
 char char_array[] = "Look Here";
 ```
 
 This is same as initializing it as follows:
 
-```
+```C
 char char_array[] = { 'L', 'o', 'o', 'k', ' ', 'H', 'e', 'r', 'e', '\0' };
 ```
 
@@ -69,7 +69,7 @@ int main()
 
 Just like any other array, you can put the array size inside the `[]` of the declaration:
 
-```
+```C
 char char_array[15] = "Look Here";
 ```
 
