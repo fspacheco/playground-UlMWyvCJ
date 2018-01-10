@@ -5,8 +5,8 @@ plan:
 - title: Lesson 2
   statement: lessons/lesson2.md
 - title: String Length, String Comparison
-  statement: lessons/lesson2.md
-- title: String Copy
   statement: lessons/lesson3.md
-- title: String Concatenation
+- title: String Copy
   statement: lessons/lesson4.md
+- title: String Concatenation
+  statement: lessons/lesson5.md
