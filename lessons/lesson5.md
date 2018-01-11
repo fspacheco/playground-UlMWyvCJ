@@ -137,7 +137,7 @@ char *pd = dest + 4;
 
 # String concatenation upto n characters - `strncat`
 
-The `strncat` function is used to copy at most n characters from source string to destination string. Here is an example:
+The `strncat` function is used to append at most n characters from source string to destination string. Here is an example:
 
 ```C runnable
 #include <stdio.h>
