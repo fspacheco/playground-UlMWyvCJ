@@ -40,6 +40,8 @@ We see that
 
 ```
 Index of 'b' = Address of 'b' - Address of 'a'
+             = 101 - 100
+             = 1
 ```
 
 The starting address of the array can be accessed by the array name. So the index is calculated as follows:
