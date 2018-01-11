@@ -74,7 +74,7 @@ int main()
 }
 ```
 
-**Warning:** Because `strtok` modifies original string, character pointer to read-only string shouldn't be passed to `strtok`. The following examples will trigger undefined behaviour because the first parameter is read-only string:
+**Warning:** Because `strtok` modifies original string, character pointer to read-only string shouldn't be passed to `strtok`. The following examples will trigger undefined behaviour because the first parameter to `strtok` is read-only string:
 
 ```C
 char *str = "strtok needs to be called several times to split a string";
