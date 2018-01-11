@@ -103,10 +103,12 @@ Character pointers can be used in `strcat`:
 #include <stdio.h>
 #include <string.h>
 
+#define DEST_SIZE 40
+
 int main()
 {
 	char src[] = "Look Here";
-	char dest[40] = "Unimaginable";
+	char dest[DEST_SIZE] = "Unimaginable";
 
 	char *ps = src + 4;
 	char *pd = dest + 6;
@@ -123,7 +125,9 @@ In the example above, `ps` points to the 5th character of `src` and `pd` points 
 **Warning:** When using character pointers, care must be taken so that the source and destination aren't overlapped. Following is an example of ill-formed code which uses `strcat` of overlapped buffer - which causes undefined behaviour:
 
 ```C
-char dest[40] = "Unimaginable";
+#define DEST_SIZE 40
+
+char dest[DEST_SIZE] = "Unimaginable";
 
 char *ps = dest + 6;
 char *pd = dest + 4;
