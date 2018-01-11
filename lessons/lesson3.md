@@ -1,6 +1,6 @@
 Let's look at some of the operations that can be performed on a C string without modifying the string(s) involved. To use the functions in this lesson, please make sure to `#include` the header file `string.h`.
 
-## Number of characters in a string - `strlen`
+# Number of characters in a string - `strlen`
 
 `strlen` returns the number of characters in a C string, _excluding_ the NULL character.
 
@@ -19,7 +19,7 @@ int main()
 
 ```
 
-## Comparison of different strings - `strcmp`
+# Comparison of different strings - `strcmp`
 
 `strcmp` is used to compare two different C strings. When the strings passed to `strcmp` contains exactly same characters in every index and have exactly same length, it returns 0. For example, `i` will be 0 in the following code:
 
@@ -67,7 +67,7 @@ int main()
 
 ```
 
-## Comparison of different strings upto n-th character - `strncmp`
+# Comparison of different strings upto n-th character - `strncmp`
 
 If you want to compare first n characters of two strings, then `strncmp` can be used. Its return value is similar to `strcmp`.
 

@@ -1,6 +1,6 @@
 We're going to do some amazing thing from this lesson. Let's see how searching works.
 
-## Search for a character in a string - `strchr` & `strrchr`
+# Search for a character in a string - `strchr` & `strrchr`
 
 The `strchr` function returns the first occurrence of a character within a string. The `strrchr` returns the last occurrence of a character within a string. Using these functions, lets write a program that output the index of first and last occurrence of all characters in alphabet (a-z, small letters only).
 

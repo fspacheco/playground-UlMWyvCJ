@@ -1,6 +1,6 @@
 Examples in this lesson modify a string/character array.
 
-## Copying one string to another - `strcpy`
+# Copying one string to another - `strcpy`
 
 `strcpy` can be used to copy one string to another. Remember that C strings are character arrays. You must pass character array, or pointer to character array to this function where string will be copied.
 
@@ -114,7 +114,7 @@ char *dp = dest + 8;
 
 In the example above, `sp` points to the 6th character of `dest` and `dp` points to the 9th character of `dest`. Both of them share the same array (`dest`). This is not allowed and executing code like this may produce unexpected results.
 
-## Copying first n characters from one string to another - `strncpy`
+# Copying first n characters from one string to another - `strncpy`
 
 `strncpy` is used to copy first several characters from source string to destination string. It doesn't append any NULL character when the copying finishes.
 

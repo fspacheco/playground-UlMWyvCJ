@@ -1,6 +1,6 @@
 Examples in this lesson modifies existing string.
 
-## Appending one string at the end of another - `strcat`
+# Appending one string at the end of another - `strcat`
 
 The `strcat` function is used to concatenate one string (source) at the end of another string (destination). It does the following:
 
@@ -135,7 +135,7 @@ char *pd = dest + 4;
 /* strcat(pd, ps); */ /* Fatal: pd and ps overlaps - undefined behaviour */
 ```
 
-## String concatenation upto n characters - `strncat`
+# String concatenation upto n characters - `strncat`
 
 The `strncat` function is used to copy at most n characters from source string to destination string. Here is an example:
 

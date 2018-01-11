@@ -8,7 +8,7 @@ A string in C (also known as C string) is an array of characters, followed by a 
 
 It's an array of 10 characters.
 
-## How to initialize a variable with C string
+# How to initialize a variable with C string
 
 There are different ways to initialize a variable with C string.
 
