@@ -80,10 +80,12 @@ Of course, the second parameter could also be pointer to character:
 #include <stdio.h>
 #include <string.h>
 
+#define DEST_SIZE 40
+
 int main()
 {
 	char src[] = "Look Here";
-	char dest[40] = "Unimaginable";
+	char dest[DEST_SIZE] = "Unimaginable";
 
 	char *ps = src + 4;
 	char *pd = dest + strlen(dest);
