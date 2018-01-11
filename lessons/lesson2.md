@@ -2,3 +2,12 @@ There are many Standard C library functions which can be used devastatingly! If 
 
 This tutorial will highlight safe variants of the functions first. Then the **unsafe** function that does the same thing will be introduced. In case the safe variants haven't come to the compiler you use, you can proceed with the unsafe functions - please be careful. Also remember that the unsafe variants promote bad programming practice.
 
+The **safe** variants will be marked with <div float="left"> ![Safe variant](../images/green-c-small.png) ![Safe variant](../images/green-c-small.png) hello </div>
+
+The **unsafe** variants will be marked with ![Unafe variant](../images/red-c-small.png) hello
+
+
+Inline-style: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+
