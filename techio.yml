@@ -12,3 +12,5 @@ plan:
   statement: lessons/lesson5.md
 - title: Search Within A String
   statement: lessons/lesson6.md
+- title: String Split
+  statement: lessons/lesson7.md
