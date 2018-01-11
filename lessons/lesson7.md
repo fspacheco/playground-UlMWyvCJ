@@ -73,3 +73,17 @@ int main()
 	return 0;
 }
 ```
+
+**Warning:** Because `strtok` modifies original string, character pointer to read-only string shouldn't be passed to `strtok`. The following examples will trigger undefined behaviour because the first parameter is read-only string:
+
+```C
+char *str = "strtok needs to be called several times to split a string";
+char *ptr = strtok(str, delim);
+```
+
+```C
+char *ptr = strtok("strtok needs to be called several times to split a string", delim);
+```
+
+If you don't want the original string to be modified, create a copy of the original string using `strcpy` and pass that copy to `strtok`.
+
