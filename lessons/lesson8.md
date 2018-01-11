@@ -14,7 +14,7 @@ char arr[NUMBER_OF_STRING][MAX_STRING_SIZE] =
 };
 ```
 
-Since all but the highest dimention can be omitted from an array declaration, the above declaration can be reduced to:
+Since all but the highest dimension can be omitted from an array declaration, the above declaration can be reduced to:
 
 ```C
 #define MAX_STRING_SIZE 40

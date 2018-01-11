@@ -67,7 +67,7 @@ int main()
 
 ```
 
-# Comparison of different strings upto n-th character - `strncmp`
+# Comparison of different strings up to n-th character - `strncmp`
 
 If you want to compare first n characters of two strings, then `strncmp` can be used. Its return value is similar to `strcmp`.
 
