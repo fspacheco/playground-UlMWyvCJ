@@ -2,7 +2,7 @@ We're going to do some amazing thing from this lesson. Let's see how searching w
 
 # Search for a character in a string - `strchr` & `strrchr`
 
-The `strchr` function returns the first occurrence of a character within a string. The `strrchr` returns the last occurrence of a character within a string. They return a character pointer to the character found, or NULL pointer if the character is not found. Using these functions, lets write a program that output the index of first and last occurrence of all characters in alphabet (a-z, small letters only).
+The `strchr` function returns the first occurrence of a character within a string. The `strrchr` returns the last occurrence of a character within a string. They return a character pointer to the character found, or NULL pointer if the character is not found. Using these functions, lets write a program that output the index of first and last occurrence of all lower case characters in a string.
 
 We define the string to be searched.
 
