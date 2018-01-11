@@ -8,6 +8,8 @@ A string in C (also known as C string) is an array of characters, followed by a 
 
 It's an array of 10 characters.
 
+In this tutorial, only single byte characters are considered. But same concept can be expanded for multi byte characters. That's useful for writing programs that uses non-English characters.
+
 # How to initialize a variable with C string
 
 There are different ways to initialize a variable to access C string.
