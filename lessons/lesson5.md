@@ -135,3 +135,82 @@ char *pd = dest + 4;
 /* strcat(pd, ps); */ /* Fatal: pd and ps overlaps - undefined behaviour */
 ```
 
+## String concatenation upto n characters - `strncat`
+
+The `strncat` function is used to copy at most n characters from source string to destination string. Here is an example:
+
+```C runnable
+#include <stdio.h>
+#include <string.h>
+
+#define DEST_SIZE 40
+
+int main()
+{
+	char src[] = "Look Here";
+	char dest[DEST_SIZE] = "Unimaginable";
+
+	strncat(dest, src, 4);
+	printf(dest);
+
+	return 0;
+}
+```
+
+The example above will append first 4 characters from `src` at the end of `dest` (i.e. starting from the NULL character of `dest`) and appends a NULL character in the end.
+
+**Warning:** The destination character array must be large enough to hold all characters of destination, n characters of source and a NULL character. Following is an example of an ill-formed code which violates this rule:
+
+```
+#define DEST_SIZE 4
+
+char src[] = "Look Here";
+char dest[DEST_SIZE] = "A";
+
+/* strncat(dest, src, 4); */ /* Fatal: dest doesn't have enough space for
+                             all characters of dest
+                             4 characters of src
+                             a NULL character */
+printf(dest);
+```
+
+Character pointers can be used to the parameters of `strncat`:
+
+```C runnable
+#include <stdio.h>
+#include <string.h>
+
+#define DEST_SIZE 40
+
+int main()
+{
+	char src[] = "Look Here";
+	char dest[DEST_SIZE] = "Unimaginable";
+
+	char *ps = src + 4;
+
+	strncat(dest, ps, 5);
+	printf(dest);
+
+	char x;
+	scanf("%c", &x);
+
+	return 0;
+}
+```
+
+In the example above, `ps` points to the 5th character of `src` (that's the space). The call to `strncat` finds the NULL character of `dest`, appends 5 characters starting from `ps` and finally appends a NULL character.
+
+**Warning:** When using character pointers be careful to the fact that the source and the destination cannot be overlapped. If the source and destination overlaps, this will trigger undefined behaviour. Following is such an example of bad coding:
+
+```C
+#define DEST_SIZE 40
+
+char dest[DEST_SIZE] = "Unimaginable";
+
+char *sp = dest + 5;
+char *dp = dest + 8;
+
+/* strncat(dp, sp, 5); */ /* Fatal: source and destination aren't allowed to overlap */
+```
+
