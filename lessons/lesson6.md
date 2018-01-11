@@ -118,7 +118,7 @@ int main()
 }
 ```
 
-# Search for occurrence of any character - `strpbrk`
+# Search for occurrence of any character in a string - `strpbrk`
 
 Using `strchr` one can find if a string contain a single character. What if someone wants to find if a string contains any character from a group of character? That's what `strpbrk` does.
 
