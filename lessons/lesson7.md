@@ -42,7 +42,7 @@ In the next call to `strtok`, the first parameter needs to be NULL so that `strt
 ptr = strtok(NULL, delim);
 ```
 
-`strtok` returns NULL when there is no more tokens, i.e., the whole string is splitted. This can be utilized to know when to stop calling `strtok`. Putting it all together in complete example below.
+`strtok` returns NULL when there is no more tokens, i.e., the whole string is split. This can be utilized to know when to stop calling `strtok`. Putting it all together in complete example below.
 
 ```C runnable
 #include <stdio.h>
