@@ -14,3 +14,5 @@ plan:
   statement: lessons/lesson6.md
 - title: String Split
   statement: lessons/lesson7.md
+- title: Array Of C String
+  statement: lessons/lesson8.md
