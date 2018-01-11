@@ -78,11 +78,11 @@ int main()
 
 ```C
 char *str = "strtok needs to be called several times to split a string";
-char *ptr = strtok(str, delim);
+/* char *ptr = strtok(str, delim); */ /* Fatal: read-only string passed to first parameter of strtok */
 ```
 
 ```C
-char *ptr = strtok("strtok needs to be called several times to split a string", delim);
+/* char *ptr = strtok("strtok needs to be called several times to split a string", delim); */ /* Fatal: read-only string passed to first parameter of strtok */
 ```
 
 If you don't want the original string to be modified, create a copy of the original string using `strcpy` and pass that copy to `strtok`.
