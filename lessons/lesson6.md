@@ -7,7 +7,7 @@ The `strchr` function returns the first occurrence of a character within a strin
 We define the string to be searched.
 
 ```C
-char str[] = "finding first and last occurrence of a character";
+char str[] = "finding first and last occurrence of a character is amazing";
 ```
 
 We'll loop through all lower case characters. Let's define a character array for that and write a loop.
@@ -51,7 +51,7 @@ So we've everything now. We can simply output these positions. Here is a complet
 
 int main()
 {
-	char str[] = "finding first and last occurrence of a character";
+	char str[] = "finding first and last occurrence of a character is amazing";
 	char alpha[] = "abcdefghijklmnopqrstuvwxyz";
 
 	printf("String to search: %s\n", str);
