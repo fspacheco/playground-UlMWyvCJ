@@ -118,3 +118,59 @@ int main()
 }
 ```
 
+# Search for occurrence of any character - `strpbrk`
+
+Using `strchr` one can find if a string contain a single character. What if someone wants to find if a string contains any character from a group of character? That's what `strpbrk` does.
+
+You provide two strings to `strpbrk`. If any character from second string is found in the first string, `strpbrk` will return a character pointer to the first occurrence. Let's say, you've a string like:
+
+```C
+char str[] = "finding digits where there could be digit 5236 is amazing";
+```
+
+You want to know if `str` contains any digits.  So you define a `digits` array:
+
+```C
+char digits[] = "0123456789";
+```
+
+Plug them in to `strpbrk`:
+
+```C
+char *ptr = strpbrk(str, digits);
+```
+
+Because `str` contains character from `digits`, `ptr` will point to its first occurrence:
+
+```
+finding digits where there could be digit 5236 is amazing
+                                          ^
+                                          ptr points here
+```
+
+`ptr` will be NULL pointer if no character from second parameter is present in the first parameter. Using NULL check we can verify whether any character from second parameter is present in first parameter. Here is a complete example:
+
+```C runnable
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char str[] = "finding digits where there could be digit 5236 is amazing";
+	char digits[] = "0123456789";
+	char *ptr = strpbrk(str, digits);
+
+	if (ptr != NULL) /* Expected character is found */
+	{
+		printf("'%s' contains at least one character from '%s'\n", str, digits);
+	}
+	else /* Expected character isn't found */
+	{
+		printf("'%s' doesn't contain any character from '%s'\n", str, digits);
+	}
+
+	return 0;
+}
+
+```
+
