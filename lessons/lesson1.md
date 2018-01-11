@@ -10,7 +10,7 @@ It's an array of 10 characters.
 
 # How to initialize a variable with C string
 
-There are different ways to initialize a variable with C string.
+There are different ways to initialize a variable to access C string.
 
 ```C
 char *char_ptr = "Look Here";
