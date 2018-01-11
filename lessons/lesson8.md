@@ -29,7 +29,7 @@ char arr[][MAX_STRING_SIZE] =
 
 But it is a good practice to specify size of both dimensions.
 
-Now each `arr[x]` is a C string. You can use any function on `arr[x]` that works on string!
+Now each `arr[x]` is a C string and each `arr[x][y]` is a character. You can use any function on `arr[x]` that works on string!
 
 ```C runnable
 #include <stdio.h>
