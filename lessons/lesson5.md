@@ -211,3 +211,17 @@ char *dp = dest + 8;
 /* strncat(dp, sp, 5); */ /* Fatal: source and destination aren't allowed to overlap */
 ```
 
+If the number of characters to copy is more than the characters in the source string, `strncat` will stop appending when it will encounter the NULL character in source. In the example below `strncat` stops concatenation as soon as it reaches the NULL character of `src`:
+
+```C
+#define DEST_SIZE 40
+
+char src[] = "Look Here";
+char dest[DEST_SIZE] = "Unimaginable";
+
+char *ps = src + 4;
+
+strncat(dest, ps, 10); /* The third parameter is 10, but there are 5 characters before the NULL character from ps */
+printf(dest); /* Output: Unimaginable Here */
+```
+
