@@ -168,5 +168,19 @@ int main()
 }
 ```
 
+If the number of characters to copy is more than the characters in the source string, `strncpy` will stop copying when it will encounter the NULL character in source. In the example below `strncpy` stops copying as soon as it reaches the NULL character of `src`:
+
+```C
+#define DEST_SIZE 40
+
+char src[] = "Look Here";
+char dest[DEST_SIZE] = "Unimaginable";
+
+char *ps = src + 3;
+
+strncpy(dest, ps, 10); /* The third parameter is 10, but there are 6 characters before the NULL character from ps */
+printf(dest); /* Output: k Here */
+```
+
 Other properties of `strcpy` are also applicable for `strncpy`.
 
