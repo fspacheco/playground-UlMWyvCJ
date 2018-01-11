@@ -1,6 +1,6 @@
 Examples in this lesson modify a string/character array.
 
-## Copying one string to another - `strcpy`
+## ![Unafe variant](../images/red-c.png) Copying one string to another - `strcpy`
 
 `strcpy` can be used to copy one string to another. Remember that C strings are character arrays. You must pass character array, or pointer to character array to this function where string will be copied.
 
