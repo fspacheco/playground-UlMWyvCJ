@@ -27,7 +27,7 @@ char arr[][MAX_STRING_SIZE] =
 };
 ```
 
-But it is a good practice to specify size of both dimension.
+But it is a good practice to specify size of both dimensions.
 
 Now each `arr[x]` is a C string. You can use any function on `arr[x]` that works on string!
 
