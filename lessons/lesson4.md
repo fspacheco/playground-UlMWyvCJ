@@ -55,10 +55,12 @@ Character pointers can also be passed as parameters of `strcpy`.
 #include <stdio.h>
 #include <string.h>
 
+#define DEST_SIZE 40
+
 int main()
 {
 	char src[] = "Look Here";
-	char dest[40] = "Unimaginable";
+	char dest[DEST_SIZE] = "Unimaginable";
 
 	char *p = dest + 5;
 
