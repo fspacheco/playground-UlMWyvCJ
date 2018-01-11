@@ -73,3 +73,48 @@ int main()
 }
 
 ```
+
+# Search for string inside another string - `strstr`
+
+A substring is a contiguous elements of a string. As an example, "ea", "ch" etc are substrings of "teacher"; but "cer" isn't. The function `strstr` returns the first occurrence of a string in another string. This means that `strstr` can be used to detect whether a string contains another string. In other words, whether a string is a substring of another string.
+
+`strstr` returns the first occurrence of the substring in another string in the form of a character pointer pointing to the first character of the match. Consider the following example:
+
+```C
+char str[] = "teacher teach tea";
+char *ptr = strstr(str, "ac");
+```
+
+ `ptr` will point to the character 'a' of first "ac" in `str`:
+ 
+```
+teacher teach tea
+  ^
+  ptr points here
+```
+
+However, if the string is not found, `strstr` returns NULL pointer. Using the NULL check, we can verify whether a string contains another string. Here is a complete example:
+
+```C runnable
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char str[] = "teacher teach tea";
+	char search[] = "ac";
+	char *ptr = strstr(str, search);
+
+	if (ptr != NULL) /* Substring found */
+	{
+		printf("'%s' contains '%s'\n", str, search);
+	}
+	else /* Substring not found */
+	{
+		printf("'%s' doesn't contain '%s'\n", str, search);
+	}
+
+	return 0;
+}
+```
+
