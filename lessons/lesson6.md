@@ -29,7 +29,7 @@ char *position_ptr = strchr(str, alpha[i]);
 char *r_position_ptr = strrchr(str, alpha[i]);
 ```
 
-These character pointers are simply the address of the character found within the array. If we subtract the first address from this address, then we'll find the index of the character. The starting address of the array can be accessed by the array name. So the index is calculated as follows:
+These character pointers are simply the address of the character found within the array. If we subtract the starting address from this address, then we'll find the index of the character. The starting address of the array can be accessed by the array name. So the index is calculated as follows:
 
 ```C
 int position = position_ptr - str;
