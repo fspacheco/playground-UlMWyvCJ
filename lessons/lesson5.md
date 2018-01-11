@@ -90,7 +90,7 @@ char dest[DEST_SIZE];
 int main()
 {
 	strcat(dest, "Look Here");
-	printf("%s", dest);
+	printf(dest);
 
 	return 0;
 }
@@ -112,7 +112,7 @@ int main()
 	char *pd = dest + 6;
 
 	strcat(pd, ps);
-	printf("%s", dest);
+	printf(dest);
 
 	return 0;
 }
