@@ -96,3 +96,39 @@ int main()
 }
 ```
 
+Following example concatenates all strings in a string array into a single string:
+
+```C runnable
+#include <stdio.h>
+#include <string.h>
+
+#define NUMBER_OF_STRING 4
+#define MAX_STRING_SIZE 40
+#define DEST_SIZE 100
+
+int main()
+{
+	char arr[NUMBER_OF_STRING][MAX_STRING_SIZE] =
+	{ "array of c string",
+	  "is fun to use",
+	  "make sure to properly",
+	  "tell the array size"
+	};
+
+	char dest[DEST_SIZE] = "";
+
+	for (int i = 0; i < NUMBER_OF_STRING; i++)
+	{
+		strcat(dest, arr[i]);
+		if (i < NUMBER_OF_STRING - 1)
+		{
+		    strcat(dest, " ");
+		}
+	}
+
+	printf(dest);
+
+	return 0;
+}
+```
+
