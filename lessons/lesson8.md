@@ -46,7 +46,7 @@ char arr[NUMBER_OF_STRING][MAX_STRING_SIZE] =
 
 for (int i = 0; i < NUMBER_OF_STRING; i++)
 {
-	printf("'%s' has length %d\n", arr[i], strlen(arr[i]));
+    printf("'%s' has length %d\n", arr[i], strlen(arr[i]));
 }
 ```
 
