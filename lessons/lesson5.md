@@ -192,9 +192,6 @@ int main()
 	strncat(dest, ps, 5);
 	printf(dest);
 
-	char x;
-	scanf("%c", &x);
-
 	return 0;
 }
 ```
