@@ -23,7 +23,7 @@ int main()
 	char dest[DEST_SIZE] = "Unimaginable";
 
 	strcat(dest, src);
-	printf("%s", dest);
+	printf(dest);
 
 	return 0;
 }
@@ -41,7 +41,7 @@ char dest[] = "Unimaginable";
                          all characters of dest
                          all chracters of src
                          a NULL character */
-printf("%s", dest);
+printf(dest);
 ```
 
 **Warning:** The destination character array must be initialized with C string before passing it to `strcat`. In other words, the destination character array must have at least 1 location which has a NULL character. Following is an ill-formed code and shouldn't be practiced:
@@ -54,7 +54,7 @@ char dest[DEST_SIZE];
 /* strcat(dest, "Look Here"); */ /* Fatal: dest is not initialized
                                  - no guarantee about a NULL character 
                                  - undefined behaviour */
-/* printf("%s", dest); */ /* Fatal: dest isn't initialized - results in undefined behaviour */
+/* printf(dest); */ /* Fatal: dest isn't initialized - results in undefined behaviour */
 ```
 
 At minimum the destination array could be initialized as empty string (only the NULL character) and after that `strcat` can be used:
@@ -70,7 +70,7 @@ int main()
 	char dest[DEST_SIZE] = "";
 
 	strcat(dest, "Look Here");
-	printf("%s", dest);
+	printf(dest);
 
 	return 0;
 }
