@@ -30,8 +30,10 @@ char dest[4] = "A";
 The destination character array doesn't have to initialized. It can be left uninitialized and can be passed to `strcpy`. Still, it must have enough space to hold the source array and a NULL character.
 
 ```C
+#define DEST_SIZE 40
+
 char src[] = "Look Here";
-char dest[40];
+char dest[DEST_SIZE];
 
 strcpy(dest, src);
 printf("%s", dest); /* Output: Look Here */
@@ -39,7 +41,9 @@ printf("%s", dest); /* Output: Look Here */
 
 Also possible:
 ```C
-char dest[40];
+#define DEST_SIZE 40
+
+char dest[DEST_SIZE];
 
 strcpy(dest, "Look Here");
 printf("%s", dest); /* Output: Look Here */
