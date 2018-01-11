@@ -1,6 +1,6 @@
 Examples in this lesson modifies existing string.
 
-## String concatenation - `strcat`
+## Appending one string at the end of another - `strcat`
 
 The `strcat` function is used to append one string (source) at the end of another string (destination). It does the following:
 
