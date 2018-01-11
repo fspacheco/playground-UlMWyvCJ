@@ -6,8 +6,3 @@ The **safe** variants will be marked with ![Safe variant](../images/green-c-smal
 
 The **unsafe** variants will be marked with ![Unafe variant](../images/red-c-small.png) hello
 
-
-Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-
-
