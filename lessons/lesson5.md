@@ -77,7 +77,7 @@ int main()
 
 ```
 
-If the destination character array is declared at global scope, then all elements of the array are initialized to 0 automatically by C runtime initialization. Since a 0 is equivalent to NULL character, an array declared globally can be directly passed to `strcat`:
+If the destination character array is declared at global scope, then all elements of the array are initialized to 0 automatically by C. Since a 0 is equivalent to NULL character, an array declared globally can be directly passed to `strcat`:
 
 ```C runnable
 #include <stdio.h>
