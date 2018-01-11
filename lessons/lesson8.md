@@ -96,7 +96,7 @@ int main()
 }
 ```
 
-Following example concatenates all strings in a string array into a single string:
+Following example concatenates all strings in a string array with space between them into a single string:
 
 ```C runnable
 #include <stdio.h>
