@@ -10,3 +10,5 @@ plan:
   statement: lessons/lesson4.md
 - title: String Concatenation
   statement: lessons/lesson5.md
+- title: Search Within A String
+  statement: lessons/lesson6.md
