@@ -15,10 +15,12 @@ Here is an example:
 #include <stdio.h>
 #include <string.h>
 
+#define DEST_SIZE 40
+
 int main()
 {
 	char src[] = "Look Here";
-	char dest[40] = "Unimaginable";
+	char dest[DEST_SIZE] = "Unimaginable";
 
 	strcat(dest, src);
 	printf("%s", dest);
@@ -27,7 +29,7 @@ int main()
 }
 ```
 
-Notice how it works. When `dest` is initialized with `char dest[40] = "Unimaginable";` there is a NULL character at the end. That's the starting point for the source string to be copied. When all characters of source string are copied to `dest`, a NULL character is appended.
+Notice how it works. When `dest` is initialized with `char dest[DEST_SIZE] = "Unimaginable";` there is a NULL character at the end. That's the starting point for the source string to be copied. When all characters of source string are copied to `dest`, a NULL character is appended.
 
 **Warning:** The destination character array must be large enough to hold all characters of source, all characters of destination and a NULL character. Following ill-formed code triggers undefined behaviour:
 
@@ -45,7 +47,9 @@ printf("%s", dest);
 **Warning:** The destination character array must be initialized with C string before passing it to `strcat`. In other words, the destination character array must have at least 1 location which has a NULL character. Following is an ill-formed code and shouldn't be practiced:
 
 ```C
-char dest[40];
+#define DEST_SIZE 40
+
+char dest[DEST_SIZE];
 
 /* strcat(dest, "Look Here"); */ /* Fatal: dest is not initialized
                                  - no guarantee about a NULL character 
@@ -59,10 +63,32 @@ At minimum the destination array could be initialized as empty string (only the 
 #include <stdio.h>
 #include <string.h>
 
+#define DEST_SIZE 40
+
 int main()
 {
-	char dest[40] = "";
+	char dest[DEST_SIZE] = "";
 
+	strcat(dest, "Look Here");
+	printf("%s", dest);
+
+	return 0;
+}
+
+```
+
+If the destination character array is declared at global scope, then all elements of the array are initialized to 0 automatically by C runtime initialization. Since a 0 is equivalent to NULL character, an array declared globally can be directly passed to `strcat`:
+
+```C runnable
+#include <stdio.h>
+#include <string.h>
+
+#define DEST_SIZE 40
+
+char dest[DEST_SIZE];
+
+int main()
+{
 	strcat(dest, "Look Here");
 	printf("%s", dest);
 
