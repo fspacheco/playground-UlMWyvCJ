@@ -24,7 +24,7 @@ The destination character array is the first parameter to `strcpy`. The source c
 char src[] = "Look Here";
 char dest[4] = "A";
 
-/* strcpy(dest, src); */ /* Fatal: dest doesn't have enough space to hold all characters of src */
+/* strcpy(dest, src); */ /* Fatal: dest doesn't have enough space to hold all characters of src plus a NULL character */
 ```
 
 The destination character array doesn't have to initialized. It can be left uninitialized and can be passed to `strcpy`. Still, it must have enough space to hold the source array and a NULL character.
