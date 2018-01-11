@@ -48,11 +48,10 @@ ptr = strtok(NULL, delim);
 #include <stdio.h>
 #include <string.h>
 
-#define STR_SIZE 58
-
 int main()
 {
-	char str[STR_SIZE] = "strtok needs to be called several times to split a string";
+	char str[] = "strtok needs to be called several times to split a string";
+	int init_size = strlen(str);
 	char delim[] = " ";
 
 	char *ptr = strtok(str, delim);
@@ -64,13 +63,13 @@ int main()
 	}
 
 	/* This loop will show that there are zeroes in the str after tokenizing */
-	for (int i = 0; i < STR_SIZE; i++)
+	for (int i = 0; i < init_size; i++)
 	{
-		printf("%d ", str[i]);
+		printf("%d ", str[i]); /* Convert the character to integer, in this case
+							   the character's ASCII equivalent */
 	}
 	printf("\n");
 
 	return 0;
 }
-
 ```
