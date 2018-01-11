@@ -7,11 +7,12 @@ Examples in this lesson modify a string/character array.
 The following example will overwrite the contents of `dest` with the content of `src`:
 
 ```C
-char src[]    = "Look Here";
-char dest[40] = "Unimaginable";
+#define DEST_SIZE 40
+
+char src[] = "Look Here";
+char dest[DEST_SIZE] = "Unimaginable";
 
 strcpy(dest, src);
-
 printf("%s", dest); /* Output: Look Here */
 ```
 
