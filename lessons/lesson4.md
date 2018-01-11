@@ -182,5 +182,3 @@ strncpy(dest, ps, 10); /* The third parameter is 10, but there are 6 characters 
 printf(dest); /* Output: k Here */
 ```
 
-Other properties of `strcpy` are also applicable for `strncpy`.
-
