@@ -87,3 +87,27 @@ char *str = "strtok needs to be called several times to split a string";
 
 If you don't want the original string to be modified, create a copy of the original string using `strcpy` and pass that copy to `strtok`.
 
+The delimiter doesn't have to be a single character. It can contain multiple characters and splitting will be performed for any of the characters. Following is another example with multiple delimiters:
+
+```C runnable
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char str[] = "strtok needs to be called several times to split a string";
+	int init_size = strlen(str);
+	char delim[] = "ai";
+
+	char *ptr = strtok(str, delim);
+
+	while (ptr != NULL)
+	{
+		printf("'%s'\n", ptr);
+		ptr = strtok(NULL, delim);
+	}
+
+	return 0;
+}
+```
+
