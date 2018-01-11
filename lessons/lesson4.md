@@ -8,9 +8,6 @@ The following example will overwrite the contents of `dest` with the content of 
 
 ```C runnable
 #include <stdio.h>
-
-#define __STDC_WANT_LIB_EXT1__ 1
-
 #include <string.h>
 
 #define ARRAY_SIZE 40
