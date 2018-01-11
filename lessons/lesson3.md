@@ -1,4 +1,4 @@
-Let's look at some of the operations that can be performed on a C string without modifying the string(s) involved. To use the functions in this lesson, please make sure to `#include` the header file `string.h`.
+Let's look at some of the operations that can be performed on a C string without modifying the string(s) involved.
 
 # Number of characters in a string - `strlen`
 
