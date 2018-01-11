@@ -6,10 +6,11 @@ Examples in this lesson modify a string/character array.
 
 The following example will overwrite the contents of `dest` with the content of `src`:
 
-```C
+```C runnable
+#include <stdio.h>
+
 #define __STDC_WANT_LIB_EXT1__ 1
 
-#include <stdio.h>
 #include <string.h>
 
 #define ARRAY_SIZE 40
@@ -20,23 +21,10 @@ int main()
 	char dest[ARRAY_SIZE] = "Unimaginable";
 
 	int e = strcpy_s(dest, ARRAY_SIZE, src);
-	if (e == 0)
-	{
-		printf("Copy successful.\n%s", dest);
-	}
-	else
-	{
-		printf("Copy fails.");
-	}
+	printf("%d\n%s", e, dest);
 
 	return 0;
 }
-
-```
-```
-Output:
-Copy successful.
-Look Here
 ```
 
 The destination character array is the first parameter to `strcpy_s`. The second parameter tells `strcpy_s` the size of the whole destination array. The source character array is the third parameter. The terminating NULL character is automatically appended at the end of the copy.
