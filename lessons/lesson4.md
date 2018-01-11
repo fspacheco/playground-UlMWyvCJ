@@ -102,7 +102,9 @@ In the example above `ps` points to the space character of `src`. `pd` points to
 **Warning**: Care must be taken when passing character pointers to `strcpy`. The source and destination aren't allowed to overlap. For example, the following is forbidden:
 
 ```C
-char dest[40] = "Unimaginable";
+#define DEST_SIZE 40
+
+char dest[DEST_SIZE] = "Unimaginable";
 
 char *sp = dest + 5;
 char *dp = dest + 8;
@@ -119,8 +121,10 @@ In the example above, `sp` points to the 6th character of `dest` and `dp` points
 In the following example, the first 5 characters are copied. No NULL character is appended.
 
 ```C
+#define DEST_SIZE 40
+
 char src[]    = "Look Here";
-char dest[40] = "Unimaginable";
+char dest[DEST_SIZE] = "Unimaginable";
 
 strncpy(dest, src, 5);
 printf("%s", dest); /* Output: Look ginable */
@@ -129,8 +133,10 @@ printf("%s", dest); /* Output: Look ginable */
 **Warning:** Care must be taken when using `strncpy` to make sure that strings are NULL terminated. Following is an example of an ill-formed code which doesn't take NULL character into account:
 
 ```C
+#define DEST_SIZE 9
+
 char src[]  = "Look Here"; /* src has 9 + 1 = 10 characters */
-char dest[9]; /* dest can only hold 9 characters */
+char dest[DEST_SIZE]; /* dest can only hold 9 characters */
 
 strncpy(dest, src, 9); /* First 9 characters are copied to dest, where is the NULL character? */
 /* printf("%s", dest); */ /* Fatal: undefined behaviour - dest doesn't have a NULL character */
@@ -142,17 +148,21 @@ But it's fine if each characters are accessed individually:
 #include <stdio.h>
 #include <string.h>
 
+#define DEST_SIZE 9
+
 int main()
 {
 	char src[] = "Look Here"; /* src has 9 + 1 = 10 characters */
-	char dest[9]; /* dest can only hold 9 characters */
+	char dest[DEST_SIZE]; /* dest can only hold 9 characters */
 
 	strncpy(dest, src, 9); /* First 9 characters are copied to dest, where is the NULL character? */
 	/* printf("%s", dest); */ /* Fatal: undefined behaviour - dest doesn't have a NULL character */
 
     /* Print out the string by accessing each character individually */
-	for (int i = 0; i < 9; i++)
+	for (int i = 0; i < DEST_SIZE; i++)
+	{
 		printf("%c", dest[i]);
+	}
 
 	return 0;
 }
