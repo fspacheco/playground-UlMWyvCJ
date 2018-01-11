@@ -1,36 +1,10 @@
 Examples in this lesson modify a string/character array.
 
-## Copying one string to another - `strcpy_s`
+## Copying one string to another - `strcpy`
 
-`strcpy_s` can be used to copy one string to another. Remember that C strings are character arrays. You must pass character array, or pointer to character array to this function where string will be copied.
+`strcpy` can be used to copy one string to another. Remember that C strings are character arrays. You must pass character array, or pointer to character array to this function where string will be copied.
 
 The following example will overwrite the contents of `dest` with the content of `src`:
-
-```C runnable
-#include <stdio.h>
-#include <string.h>
-
-#define ARRAY_SIZE 40
-
-int main()
-{
-	char src[]            = "Look Here";
-	char dest[ARRAY_SIZE] = "Unimaginable";
-
-	int e = strcpy_s(dest, ARRAY_SIZE, src);
-	printf("%d\n%s", e, dest);
-
-	return 0;
-}
-```
-
-The destination character array is the first parameter to `strcpy_s`. The second parameter tells `strcpy_s` the size of the whole destination array. The source character array is the third parameter. The terminating NULL character is automatically appended at the end of the copy.
-
-`strcpy_s` returns 0 if the copy is successful. Otherwise, it returns a non zero value.
-
-## **(Unsafe)** Copying one string to another - `strcpy`
-
-Similar to `strcpy_s` the following example will overwrite the contents of `dest` with the content of `src`:
 
 ```C
 char src[]    = "Look Here";
@@ -41,7 +15,7 @@ strcpy(dest, src);
 printf("%s", dest); /* Output: Look Here */
 ```
 
-As you can see, it doesn't require the size of destination array - so `strcpy` has no idea about the boundary of the destination array (the array it is writing to).
+The destination character array is the first parameter to `strcpy`. The source character array is the second parameter to `strcpy`. The terminating NULL character is automatically appended at the end of the copy.
 
 **Warning:** The destination character array must be large enough to hold all characters in source character array, plus a NULL character. If the source array has 100 characters, the destination array must be at least 101 character long. Following code snippet will result in undefined behaviour:
 
