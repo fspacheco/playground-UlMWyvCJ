@@ -13,7 +13,7 @@ char src[] = "Look Here";
 char dest[DEST_SIZE] = "Unimaginable";
 
 strcpy(dest, src);
-printf("%s", dest); /* Output: Look Here */
+printf(dest); /* Output: Look Here */
 ```
 
 The destination character array is the first parameter to `strcpy`. The source character array is the second parameter to `strcpy`. The terminating NULL character is automatically appended at the end of the copy.
@@ -36,7 +36,7 @@ char src[] = "Look Here";
 char dest[DEST_SIZE];
 
 strcpy(dest, src);
-printf("%s", dest); /* Output: Look Here */
+printf(dest); /* Output: Look Here */
 ```
 
 Also possible:
@@ -46,7 +46,7 @@ Also possible:
 char dest[DEST_SIZE];
 
 strcpy(dest, "Look Here");
-printf("%s", dest); /* Output: Look Here */
+printf(dest); /* Output: Look Here */
 ```
 
 Character pointers can also be passed as parameters of `strcpy`.
@@ -65,7 +65,7 @@ int main()
 	char *p = dest + 5;
 
 	strcpy(p, src);
-	printf("%s", dest);
+	printf(dest);
 
 	return 0;
 }
@@ -91,7 +91,7 @@ int main()
 	char *pd = dest + strlen(dest);
 
 	strcpy(pd, ps);
-	printf("%s", dest);
+	printf(dest);
 
 	return 0;
 }
@@ -127,7 +127,7 @@ char src[]    = "Look Here";
 char dest[DEST_SIZE] = "Unimaginable";
 
 strncpy(dest, src, 5);
-printf("%s", dest); /* Output: Look ginable */
+printf(dest); /* Output: Look ginable */
 ```
 
 **Warning:** Care must be taken when using `strncpy` to make sure that strings are NULL terminated. Following is an example of an ill-formed code which doesn't take NULL character into account:
@@ -139,7 +139,7 @@ char src[]  = "Look Here"; /* src has 9 + 1 = 10 characters */
 char dest[DEST_SIZE]; /* dest can only hold 9 characters */
 
 strncpy(dest, src, 9); /* First 9 characters are copied to dest, where is the NULL character? */
-/* printf("%s", dest); */ /* Fatal: undefined behaviour - dest doesn't have a NULL character */
+/* printf(dest); */ /* Fatal: undefined behaviour - dest doesn't have a NULL character */
 ```
 
 But it's fine if each characters are accessed individually:
