@@ -1,8 +1,8 @@
-title: How to play with strings in C
+title: Como usar strings em C
 plan:
 - title: O que é uma String em C?
   statement: lessons/lesson1.md
-- title: Safety First
+- title: Segurança em Primeiro Lugar
   statement: lessons/lesson2.md
 - title: String Length, String Comparison
   statement: lessons/lesson3.md
