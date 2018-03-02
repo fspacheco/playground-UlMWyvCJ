@@ -1,6 +1,6 @@
 title: How to play with strings in C
 plan:
-- title: What Is A String In C
+- title: O que é uma String em C?
   statement: lessons/lesson1.md
 - title: Safety First
   statement: lessons/lesson2.md
