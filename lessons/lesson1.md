@@ -1,14 +1,14 @@
-A string in C (also known as C string) is an array of characters, followed by a NULL character. To represent a string, a set of characters are enclosed within double quotes ("). The C string "Look Here" would look like as follows in memory:
+Uma string em C é um vetor (_array_) de caracteres seguido por caractere nulo (NULL: \0), que marca o fim da string. Um caractere isolado em C é representado entre apóstrofos (aspas simples: '). Já uma string, é representada entre aspas ("). A string "Olhe Aqui" ficaria assim na memória:
 
 ```
 -----------------------------------------
-| L | o | o | k |  | H | e | r | e | \0 |
+| O | l | h | e |  | A | q | u | i | \0 |
 -----------------------------------------
 ```
 
-It's an array of 10 characters.
+É um array de 10 caracteres.
 
-In this tutorial, only single byte characters are considered. But same concept can be expanded for multi byte characters. That's useful for writing programs that uses non-English characters.
+Neste tutoroal, só caracteres de um byte são considerados. O mesmo conceito pode ser expandido para caracteres multibytes, que são importantes para representar letras com acentos e outras línguas além do inglês.
 
 # How to initialize a variable with C string
 
