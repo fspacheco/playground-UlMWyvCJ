@@ -75,19 +75,19 @@ Assim como qualquer outro vetor, você pode informar o tamanho dentro de `[]` na
 char char_array[15] = "Olhe Aqui";
 ```
 
-Make sure that the size you put inside `[]` is large enough to hold all the characters in the string, plus the terminating NULL character. In this example the array indices 0 through 9 will be initialized with the characters and NULL character. Remaining indices (10 to 14) will be initialized with 0 (same as the NULL character when converted to `char`). In memory, the above array looks like as follows:
+Tenha certeza de que o tamanho que você informa dentro de `[]` é grande o suficiente para guardar todos os caracteres da string mais o caractere NULL. Neste exemplo, os índices de 0 a 9 serão inicializados com os caracteres do texto e o NULL. Os outros índices (10 a 14) serão incializados com 0 (mesmo que o caractere NULL quando convertido para `char`). Na memória, o vetor fica assim:
 
 ```
 ------------------------------------------------------------------
-| L | o | o | k |  | H | e | r | e | \0 | \0 | \0 | \0 | \0 | \0 |
+| O | l | h | e |  | A | q | u | i | \0 | \0 | \0 | \0 | \0 | \0 |
 ------------------------------------------------------------------
   0   1   2   3   4  5   6   7   8   9    10   11   12   13   14
 ```
 
-A better approach of declaring character array (or in fact any array) is to define a constant for the array size, then use the constant as the size of the array:
+Uma forma melhor de declarar um vetor de caracteres (na verdade, qualquer vetor) é definir uma constante para o tamanho e usá-la na declaração do vetor:
 
 ```C
 #define ARRAY_SIZE 15
-char char_array[ARRAY_SIZE] = "Look Here";
+char char_array[ARRAY_SIZE] = "Olhe Aqui";
 ```
 
